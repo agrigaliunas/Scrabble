@@ -1,6 +1,5 @@
 package domain;
 import domain.Ficha;
-import java.math.*;
 
 public class Jugador {
 	private int identificador;
