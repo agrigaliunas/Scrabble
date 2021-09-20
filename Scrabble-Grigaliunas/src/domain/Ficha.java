@@ -19,8 +19,8 @@ public class Ficha {
 	
 	public void setLetra(String letra) {
 		this.letra = letra;
+		
 	}
-	
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
