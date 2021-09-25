@@ -2,11 +2,12 @@ package domain;
 
 public class Ficha {
 	
-	private String letra;
-	private int valor;
+	private String letra; 
+	private int valor; 
 	
 	
-	//constructor
+	public Ficha() {	}
+	
 	public Ficha(String letra, int valor) {
 		this.setLetra(letra);
 		this.setValor(valor);
@@ -15,7 +16,6 @@ public class Ficha {
 	
 	public void setLetra(String letra) {
 		this.letra = letra;
-		
 	}
 	
 	public void setValor(int valor) {
@@ -32,6 +32,6 @@ public class Ficha {
 	
 	@Override
 	public String toString() {
-		return "Soy la ficha de letra"+letra+"y valgo"+valor+"puntos\n";
+		return "Soy la ficha "+letra+" y valgo "+valor+" puntos\n";
 	}
 }

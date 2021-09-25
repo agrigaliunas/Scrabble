@@ -1,6 +1,4 @@
 package domain;
-import domain.Ficha;
-
 
 public class Jugador {
 	private int identificador;
