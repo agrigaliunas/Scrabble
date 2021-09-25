@@ -12,8 +12,8 @@ public class Jugador {
 	public Jugador() {
 		this.nombre = "Invitado " + contadorId++;
 	}
-	
-	public Jugador(String nombre, Ficha[] fichas) {
+		
+	public Jugador(String nombre) {
 		this.setNombre(nombre);
 		this.identificador = contadorId++;
 		
@@ -33,8 +33,12 @@ public class Jugador {
 		}
 	}
 	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
 	@Override
 	public String toString() {
-		return "Soy el jugador "+nombre+" con id "+identificador;
+		return "Soy el jugador "+nombre+" con id "+identificador+"\n";
 	}
 }

@@ -32,6 +32,6 @@ public class Ficha {
 	
 	@Override
 	public String toString() {
-		return "Soy la ficha de letra"+letra+"y valgo"+valor+"puntos";
+		return "Soy la ficha de letra"+letra+"y valgo"+valor+"puntos\n";
 	}
 }

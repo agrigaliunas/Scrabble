@@ -16,18 +16,25 @@ public class Juego {
 		int cantidadJugadores = teclado.nextInt();
 		
 		while(cantidadJugadores < 2 || cantidadJugadores > 4) {
-			System.out.println("Error. Ingrese de 2 a 4 jugadores.");
+			System.out.println("Error. Ingrese de 2 a 4 jugadores.\n");
 			cantidadJugadores = teclado.nextInt();
 		}
-		teclado.close();
+		
 		
 		Jugador jugadores[] = new Jugador[cantidadJugadores];
+		System.out.println("Ahora, ingrese los nombres de cada jugador!\n");
 		
-		System.out.println(jugadores.length);
+		String nombre = teclado.next();
+		int i = 0;
+		while(i < cantidadJugadores-1) {
+			jugadores[i] = new Jugador();
+			jugadores[i].setNombre(nombre);
+			i++;
+			System.out.println("Siga ingresando: ");
+			nombre = teclado.next();
+		}
 		
-//		int i = 1;
-//		while(i <= cantidadJugadores) {
-//			
-//		}
+		teclado.close();
+	
 	}
 }
