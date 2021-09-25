@@ -79,8 +79,11 @@ public class Juego {
 			else if("Z".contains(letra)) {
 				fichas[i].setValor(10);
 			}
-
 		}
+	}
+	
+	public void asignarFichas() {
+		
 	}
 	
 }

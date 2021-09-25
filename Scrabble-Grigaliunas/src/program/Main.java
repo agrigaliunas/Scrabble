@@ -6,7 +6,7 @@ public class Main {
 		Juego juego = new Juego();
 		juego.configurarJugadores();
 		juego.generarFichas();
-				
+		juego.asignarFichas();
 	}
 	
 	

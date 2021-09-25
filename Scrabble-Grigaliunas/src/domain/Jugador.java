@@ -28,9 +28,18 @@ public class Jugador {
 		return this.fichas.length;
 	}
 	
+	public int getPuntaje() {
+		int puntaje = 0;
+		for(int i = 0 ; i<fichas.length ; i++) {
+			puntaje += fichas[i].getValor();
+		}
+		return puntaje;
+		
+	}
+	
 	public void getFichas() {
 		for(int i = 0 ; i <= this.getCantFichas() ; i++) {
-			System.out.println(this.fichas[i]);
+			System.out.println(this.fichas[i].getLetra());
 		}
 	}
 	
