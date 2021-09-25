@@ -29,6 +29,8 @@ public class Juego {
 		while(i < cantidadJugadores-1) {
 			jugadores[i] = new Jugador();
 			jugadores[i].setNombre(nombre);
+			jugadores[i].setId(i+1);
+			System.out.println(jugadores[i].toString()); // test
 			i++;
 			System.out.println("Siga ingresando: ");
 			nombre = teclado.next();
@@ -37,4 +39,6 @@ public class Juego {
 		teclado.close();
 	
 	}
+	
+	
 }

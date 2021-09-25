@@ -7,20 +7,23 @@ public class Jugador {
 	private String nombre;
 	private Ficha[] fichas;
 	
-	public static int contadorId = 1;
+	private static int contId = 1;
 	
 	public Jugador() {
-		this.nombre = "Invitado " + contadorId++;
+		this.nombre = "Invitado";
 	}
 		
 	public Jugador(String nombre) {
 		this.setNombre(nombre);
-		this.identificador = contadorId++;
-		
+		this.setId(contId);
 	}
 	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public void setId(int contId) {
+		this.identificador = contId;
 	}
 		
 	public int getCantFichas() {
@@ -31,6 +34,11 @@ public class Jugador {
 		for(int i = 0 ; i <= this.getCantFichas() ; i++) {
 			System.out.println(this.fichas[i]);
 		}
+	}
+	
+	
+	public int getId() {
+		return this.identificador;
 	}
 	
 	public String getNombre() {
