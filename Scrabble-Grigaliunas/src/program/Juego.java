@@ -31,8 +31,6 @@ public class Juego {
 			nombre = teclado.next();
 			jugadores[i].setNombre(nombre);
 			jugadores[i].setId(i+1);
-			//System.out.println(jugadores[i]); //testing
-			System.out.println("Siga ingresando: ");
 			i++;
 		}
 		
@@ -102,5 +100,6 @@ public class Juego {
 		}
 		
 	}
+	
 	
 }
