@@ -82,22 +82,28 @@ public class Juego {
 		return fichas;
 	}
 	
-	public void asignarFichas(Ficha fichas[], Jugador jugadores[]) {
+	public Jugador[] asignarFichas(Ficha fichas[], Jugador jugadores[]) {
 		Random rnd = new Random();
 		Ficha ficha;
 		int i = 0;
 		int j;
-		
+			
 		while(i < jugadores.length) {
 			Ficha fichasAsignadas[] = new Ficha[7];
+			
 			for(j = 0 ; j < 7 ; j++) {
 				fichasAsignadas[j] = new Ficha();
+				
+				// las fichas que se reparten no se pueden repetir
+				
 				ficha = fichas[rnd.nextInt(100)];
 				fichasAsignadas[j] = ficha;
 			}
+			
 			jugadores[i].setFichas(fichasAsignadas);
 			i++;
 		}
+		return jugadores;
 		
 	}
 	

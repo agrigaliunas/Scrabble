@@ -13,7 +13,6 @@ public class Ficha {
 		this.setValor(valor);
 	}
 
-	
 	public void setLetra(String letra) {
 		this.letra = letra;
 	}
