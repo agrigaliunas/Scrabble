@@ -3,7 +3,7 @@ package domain;
 public class Jugador {
 	private int identificador;
 	private String nombre;
-	private Ficha[] fichas;
+	private Ficha fichas[] = new Ficha[7];
 	
 	private static int contId = 1;
 	
@@ -11,9 +11,10 @@ public class Jugador {
 		this.nombre = "Invitado";
 	}
 		
-	public Jugador(String nombre) {
+	public Jugador(String nombre, Ficha[] fichasAsignadas) {
 		this.setNombre(nombre);
 		this.setId(contId);
+		this.setFichas(fichasAsignadas);
 	}
 	
 	public void setNombre(String nombre) {
@@ -23,6 +24,10 @@ public class Jugador {
 	public void setId(int contId) {
 		this.identificador = contId;
 	}
+	
+	public void setFichas(Ficha fichasAsignadas[]) {
+		this.fichas = fichasAsignadas;
+	}
 		
 	public int getCantFichas() {
 		return this.fichas.length;
@@ -30,7 +35,7 @@ public class Jugador {
 	
 	public int getPuntaje() {
 		int puntaje = 0;
-		for(int i = 0 ; i<fichas.length ; i++) {
+		for(int i = 0 ; i < fichas.length ; i++) {
 			puntaje += fichas[i].getValor();
 		}
 		return puntaje;
@@ -38,7 +43,8 @@ public class Jugador {
 	}
 	
 	public void getFichas() {
-		for(int i = 0 ; i <= this.getCantFichas() ; i++) {
+		int i;
+		for(i = 0 ; i < 7 ; i++) {
 			System.out.println(this.fichas[i].getLetra());
 		}
 	}

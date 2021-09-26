@@ -1,5 +1,6 @@
 package program;
 
+import java.util.Random;
 import java.util.Scanner;
 import domain.Ficha;
 import domain.Jugador;
@@ -8,7 +9,7 @@ import domain.Jugador;
 
 public class Juego {
 	
-	public void configurarJugadores() {
+	public Jugador[] configurarJugadores() {
 		
 		Scanner teclado = new Scanner(System.in);
 		
@@ -20,27 +21,26 @@ public class Juego {
 			cantidadJugadores = teclado.nextInt();
 		}
 		
-		
 		Jugador jugadores[] = new Jugador[cantidadJugadores];
-		System.out.println("Ahora, ingrese los nombres de cada jugador!\n");
-		
-		String nombre = teclado.next();
+		String nombre;
 		int i = 0;
-		while(i < cantidadJugadores-1) {
+		
+		System.out.println("Ahora, ingrese los nombres de cada jugador!\n");
+		while(i < cantidadJugadores) {
 			jugadores[i] = new Jugador();
+			nombre = teclado.next();
 			jugadores[i].setNombre(nombre);
 			jugadores[i].setId(i+1);
-			System.out.println(jugadores[i]); // test
-			i++;
+			//System.out.println(jugadores[i]); //testing
 			System.out.println("Siga ingresando: ");
-			nombre = teclado.next();
+			i++;
 		}
 		
 		teclado.close();
-	
+		return jugadores;
 	}
 	
-	public void generarFichas() {
+	public Ficha[] generarFichas() {
 		// 100 piezas 2 comodines
 		// K y W se skipean
 		String fichasAbecedario[] = {"A","A","A","A","A","A","A","A","A","A","A","A","B","B","C","C","C","C","CH"
@@ -52,6 +52,7 @@ public class Juego {
 		Ficha fichas[] = new Ficha[100];
 		int i = 0;
 		String letra;
+		
 		for(i = 0 ; i <= 99 ; i++) {
 			letra = fichasAbecedario[i];
 			fichas[i] = new Ficha();
@@ -80,9 +81,25 @@ public class Juego {
 				fichas[i].setValor(10);
 			}
 		}
+		return fichas;
 	}
 	
-	public void asignarFichas() {
+	public void asignarFichas(Ficha fichas[], Jugador jugadores[]) {
+		Random rnd = new Random();
+		Ficha ficha;
+		int i = 0;
+		int j;
+		
+		while(i < jugadores.length) {
+			Ficha fichasAsignadas[] = new Ficha[7];
+			for(j = 0 ; j < 7 ; j++) {
+				fichasAsignadas[j] = new Ficha();
+				ficha = fichas[rnd.nextInt(100)];
+				fichasAsignadas[j] = ficha;
+			}
+			jugadores[i].setFichas(fichasAsignadas);
+			i++;
+		}
 		
 	}
 	
