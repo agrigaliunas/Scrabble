@@ -18,6 +18,7 @@ public class Main {
 			jugadores[i].getFichas();
 			System.out.println("Y tiene un puntaje de: ");
 			System.out.println(jugadores[i].getPuntaje());
+			System.out.println("\n");
 			i++;
 		}
 

@@ -1,11 +1,8 @@
 package program;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import domain.Ficha;
 import domain.Jugador;
-
-
 
 public class Juego {
 	
@@ -84,22 +81,27 @@ public class Juego {
 	
 	public Jugador[] asignarFichas(Ficha fichas[], Jugador jugadores[]) {
 		Random rnd = new Random();
+		int n;
 		Ficha ficha;
 		int i = 0;
 		int j;
-			
+		
+		ArrayList<Ficha> listaFichas= new ArrayList<Ficha>(Arrays.asList(fichas));
+		
+		// implemente arraylist ya que no se me ocurria otra forma de ir
+		// eliminando las fichas usadas.
+
 		while(i < jugadores.length) {
 			Ficha fichasAsignadas[] = new Ficha[7];
 			
 			for(j = 0 ; j < 7 ; j++) {
 				fichasAsignadas[j] = new Ficha();
-				
-				// las fichas que se reparten no se pueden repetir
-				
-				ficha = fichas[rnd.nextInt(100)];
+				n = rnd.nextInt(listaFichas.size());
+				ficha = listaFichas.get(n);
+				listaFichas.remove(n);
 				fichasAsignadas[j] = ficha;
 			}
-			
+
 			jugadores[i].setFichas(fichasAsignadas);
 			i++;
 		}
