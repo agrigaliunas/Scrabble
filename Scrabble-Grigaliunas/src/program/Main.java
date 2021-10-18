@@ -10,12 +10,12 @@ public class Main {
 		Jugador jugadores[] = juego.configurarJugadores();
 		Ficha fichas[] = juego.generarFichas();
 		
-		jugadores = juego.asignarFichas(fichas,jugadores);
+		juego.asignarFichas(fichas,jugadores);
 
 		int i = 0;
 		while(i < jugadores.length) {
 			System.out.println("Fichas para el jugador "+jugadores[i].getNombre()+": ");
-			jugadores[i].getFichas();
+			jugadores[i].mostrarFichas();
 			System.out.println("Y tiene un puntaje de: ");
 			System.out.println(jugadores[i].getPuntaje());
 			System.out.println("\n");

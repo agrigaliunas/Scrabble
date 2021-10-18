@@ -79,7 +79,7 @@ public class Juego {
 		return fichas;
 	}
 	
-	public Jugador[] asignarFichas(Ficha fichas[], Jugador jugadores[]) {
+	public void asignarFichas(Ficha fichas[], Jugador jugadores[]) {
 		Random rnd = new Random();
 		int n;
 		Ficha ficha;
@@ -105,7 +105,6 @@ public class Juego {
 			jugadores[i].setFichas(fichasAsignadas);
 			i++;
 		}
-		return jugadores;
 		
 	}
 	

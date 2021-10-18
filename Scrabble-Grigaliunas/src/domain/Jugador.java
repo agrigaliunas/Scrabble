@@ -42,7 +42,7 @@ public class Jugador {
 		
 	}
 	
-	public void getFichas() {
+	public void mostrarFichas() {
 		int i;
 		for(i = 0 ; i < 7 ; i++) {
 			System.out.println(this.fichas[i].getLetra());
